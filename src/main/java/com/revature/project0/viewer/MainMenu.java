@@ -3,7 +3,7 @@ package com.revature.project0.viewer;
 import com.revature.project0.util.InputUtil;
 
 public class MainMenu implements Viewer{
-	
+//	@Override
 	public void openMenu() {
 		// TODO Auto-generated method stub
 		System.out.println("Hello Valued Customer: Welcome to Amik's 'Already Too Much' ATM Service:");
@@ -12,7 +12,7 @@ public class MainMenu implements Viewer{
 		System.out.println("Instructions: Please enter 3 if you want to exit out of the program: ");
 		
 	}
-
+//	@Override
 	public Viewer pickOption() {
 		int selected = InputUtil.getIntBetween(1, 3);
 		// The user selected a choice - and that should be reusable
