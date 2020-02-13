@@ -1,26 +1,39 @@
 package com.revature.project0.viewer;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.revature.project0.util.DBConnectionUtil;
 import com.revature.project0.util.InputUtil;
 
 public class MainMenu implements Viewer{
-//	@Override
+	@Override
 	public void openMenu() {
 		// TODO Auto-generated method stub
-		System.out.println("Hello Valued Customer: Welcome to Amik's 'Already Too Much' ATM Service:");
-		System.out.println("Instructions: Please enter 1 if you want to log-in: ");
-		System.out.println("Instructions: Please enter 2 if you want to create an account: ");
-		System.out.println("Instructions: Please enter 3 if you want to exit out of the program: ");
+		
+		System.out.println("Hello Valued Customer! \nWelcome to Donkey Kong's \n'Banana Stash Bank!' \n");
+		System.out.print(
+		"|MENU OPTIONS|\n"+
+		"1. Account Menu\n" + 
+		"0. Exit out of the program. \n" +
+		""
+		);
 		
 	}
-//	@Override
+	@Override
 	public Viewer pickOption() {
-		int selected = InputUtil.getIntBetween(1, 3);
+		int selected = InputUtil.getIntBetween(0, 1);
+		try(Connection connection = DBConnectionUtil.getConnected()){
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
 		// The user selected a choice - and that should be reusable
 		switch(selected) {
 			case 0: return null;
-		//	case 1: return new; 
-			case 2: return null;
-			default: return null;
+			case 1: return new AccViewer();  // entering 1 will cause user to invoke the create account method.
+		   default: return null;
 		}
 	}
 }

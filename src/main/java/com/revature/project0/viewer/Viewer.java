@@ -4,6 +4,7 @@ package com.revature.project0.viewer;
 // through the different states of our program.
 
 public interface Viewer {
-	void openMenu();
-	Viewer pickOption();
+	void openMenu(); // reusable if overridden
+	Viewer pickOption(); // reusable if overridden
 }
+

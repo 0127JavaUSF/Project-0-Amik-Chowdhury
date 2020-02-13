@@ -6,10 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnectionUtil {
 	public static Connection getConnected() {
-		/*
-		 * Values stored in System environment variables.  Note: Spring tools suite
-		 * will not have access to new environment variables until you restart it.
-		 */
+		// Remember to store system variables. 
 		String url = System.getenv("JDBC_URL");
 		String user = System.getenv("JDBC_ROLE");
 		String password = System.getenv("JDBC_PASSWORD");
