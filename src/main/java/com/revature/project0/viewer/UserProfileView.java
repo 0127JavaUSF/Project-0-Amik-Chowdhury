@@ -58,7 +58,7 @@ UserProfileView(UserAccount useracc){
 					" VALUES(?, ?) returning *";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1,bAccName);
+			ps.setString(1, bAccName);
 			ps.setString(2, typeOfAcc);
 			
 			ResultSet rs = ps.executeQuery();
@@ -85,6 +85,24 @@ UserProfileView(UserAccount useracc){
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Bank Account created for User: " + this.userAcc.getAccName());
+		System.out.println("Bank Account created for User: " + this.userAcc.getAccName() + "\n\r\n"+ "Approved!" + 
+				"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\r\n" + 
+				"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\r\n" + 
+				"yyyyyyyyyysssssssyyyyyyyyyyysssoys/+osyyyyyyyyyyyy\r\n" + 
+				"yyyyyyy:/++ooooo++/+syyyy:/++o+.s:+so+++//+yyyyyyy\r\n" + 
+				"yyyyyyy:+yyyyyyyyyys//syy-oyyys.//yyyyyyo:oyyyyyyy\r\n" + 
+				"yyyyyyyo-yyyyyyyyyyyys:+y-syyyo.:yyyyys//syyyyyyyy\r\n" + 
+				"yyyyyyyy-oyyyyooooyyyyy:+-syyyo-syyyyo:oyyyyyyyyyy\r\n" + 
+				"yyyyyyyy+:yyyo-ss+:oyyyo-.syyyysyyys//syyyyyyyyyyy\r\n" + 
+				"hhyyyyyys-syyy-syyo-yyyy..yyyyyyyyo:oyyyhhhhhhhyyy\r\n" + 
+				"hyyyyyyyy//yyy//yys-yyyy..yyyyyyyys:oyhhhhhhhyyyyy\r\n" + 
+				"hhyyyyyyys-yyys-so:+yyyo.-yyyyyyyyys:+yhhhhhhhdyyy\r\n" + 
+				"ydyyyyyyyy:+yyy++osyyyy::-yyyyo+yyyyy//yyyyyyydyyy\r\n" + 
+				"ydyyyyyyyyo:yyyyyyyyyy/:o:yyyy/.+yyyyy+:syyyyydyyy\r\n" + 
+				"ydyyyyyyyyy-oyyyyyyys//y+:yyyy//:oyyyyy+-oyyyydyyy\r\n" + 
+				"ydyyyyyyyyy+:yyyyso//syyo:++++:+s-+++//++syyyydyyy\r\n" + 
+				"ydyyyyyyyyys-////+oyyyyyyyyyyyyyyssyyyyyyyyyyydyyy\r\n" + 
+				"ydyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyydyyy\r\n" + 
+				"ydyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyydyyy");
 	}
 }
