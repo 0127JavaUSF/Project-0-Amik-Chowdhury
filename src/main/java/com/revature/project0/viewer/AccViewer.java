@@ -23,8 +23,8 @@ public class AccViewer implements Viewer{
 		// TODO Auto-generated method stub
 		int selected = InputUtil.getIntBetween(0, 2);
 		switch(selected) {
-		case 1: return new LoginViwer();
-		case 2: createAcc(); return this;
+		case 1: return new LoginViwer(); // returns to this menu viewer
+		case 2: createAcc(); return this; // returns to this menu viewer
 			
 		}
 		return null;

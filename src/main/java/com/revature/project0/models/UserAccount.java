@@ -30,7 +30,8 @@ public class UserAccount {
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode() { // hashcode function gotten from github sourcecode 
+		// not really used 
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((accPass == null) ? 0 : accPass.hashCode());
@@ -40,7 +41,7 @@ public class UserAccount {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) { // equals function also gotten from github sourcecode.
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -70,7 +71,7 @@ public class UserAccount {
 	}
 
 	public UserAccount(int id, String accName, String accPass) {
-	//public Acc(String accName, String accPass) {
+	//public Acc(String accName, String accPass) { // refactored to UserAccount to make it less confusing.  
 		super();
 		this.id = id;
 		this.accName = accName;

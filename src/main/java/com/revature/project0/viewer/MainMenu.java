@@ -11,9 +11,11 @@ public class MainMenu implements Viewer{
 	public void openMenu() {
 		// TODO Auto-generated method stub
 		
-		System.out.println("Hello Valued Customer! \nWelcome to Donkey Kong's \n'Banana Stash Bank!' \n");
+		System.out.println("---------------------------\n| Hello Valued Customer! "
+				+ " |\n| Welcome to Donkey Kong's| \n| 'Banana Stash Bank!'    |\n"
+				+ "---------------------------");
 		System.out.print(
-		"|MENU OPTIONS|\n"+
+		"\n|MENU OPTIONS|\n"+
 		"1. Account Menu\n" + 
 		"0. Exit out of the program. \n" +
 		""
@@ -23,7 +25,7 @@ public class MainMenu implements Viewer{
 	@Override
 	public Viewer pickOption() {
 		int selected = InputUtil.getIntBetween(0, 1);
-		try(Connection connection = DBConnectionUtil.getConnected()){
+		try(Connection connection = DBConnectionUtil.getConnected()){ // try used for security reasons.
 			
 		}
 		catch(SQLException e) {
@@ -32,7 +34,7 @@ public class MainMenu implements Viewer{
 		// The user selected a choice - and that should be reusable
 		switch(selected) {
 			case 0: return null;
-			case 1: return new AccViewer();  // entering 1 will cause user to invoke the create account method.
+			case 1: return new AccViewer();  // entering 1 will cause user to go to the account viewer method.
 		   default: return null;
 		}
 	}

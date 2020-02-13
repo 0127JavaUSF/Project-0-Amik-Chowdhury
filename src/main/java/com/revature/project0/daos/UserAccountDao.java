@@ -12,7 +12,7 @@ import com.revature.project0.models.UserAccount;
 //import com.revature.models.House;
 //import com.revature.models.Resident;
 import com.revature.project0.util.DBConnectionUtil;
-
+// Dao methods based on source code given on github. 
 /**
  * DAO - Data Access Object
  * DAOs are a particular kind of abstraction that define an object whose responsibility
@@ -21,7 +21,8 @@ import com.revature.project0.util.DBConnectionUtil;
  */
 public class UserAccountDao {
 	
-	
+	// SQL queries based on how database table models were made
+	// Used to get information from table after user creates
 	public UserAccount getAcc(String account_name, String account_password) {
 		try(Connection connection = DBConnectionUtil.getConnected()) {
 			String sql = "SELECT * FROM useraccount " + 
@@ -37,7 +38,7 @@ public class UserAccountDao {
 				int id = result.getInt("id");
 				return new UserAccount(id, accName, accPass);
 			}
-		} catch(SQLException e) {
+		} catch(SQLException e) { // if anything goes wrong.
 			e.printStackTrace();
 		}
 		return null;		
@@ -49,6 +50,7 @@ public class UserAccountDao {
 		String accPass = result.getString("account_password");
 		return new UserAccount(id, accName, accPass);
 	}
+	// SQL queries fed into Postgres to create user accounts based on user input. 
 	public UserAccount createAcc(String uname, String password) {
 		try(Connection connection = DBConnectionUtil.getConnected()) {
 			String sql = "INSERT INTO userAccount (account_name, account_password) " +
@@ -64,7 +66,7 @@ public class UserAccountDao {
 				return extractAcc(result);
 			}
 			
-		} catch(SQLException e) {
+		} catch(SQLException e) { // if anything goes wrong.
 			e.printStackTrace();
 		}
 		return null;

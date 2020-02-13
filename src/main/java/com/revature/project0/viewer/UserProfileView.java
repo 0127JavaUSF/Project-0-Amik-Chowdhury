@@ -25,7 +25,7 @@ UserProfileView(UserAccount useracc){
 	}
 
 	@Override
-	public Viewer pickOption() { 
+	public Viewer pickOption() { // gives options for actual bank accounts
 		// TODO Auto-generated method stub
 		int selected = InputUtil.getIntBetween(1, 3);
 		switch(selected){
@@ -37,13 +37,14 @@ UserProfileView(UserAccount useracc){
 	}
 	private void createBankAccount() {
 		//local variables for user inputs on bank account specs
-		System.out.println("Enter 1 for checking, 2 for savings account");
+		System.out.println("Enter 1 for checking:\nEnter 2 for savings account:");
 		 
-		int checkOrSave = InputUtil.getIntBetween(1, 2);
+		int checkOrSave = InputUtil.getIntBetween(1, 2); //
 		
-		String typeOfAcc = checkOrSave == 1 ? "CHECKING": "SAVINGS";
+		String typeOfAcc = checkOrSave == 1 ? "CHECKING": "SAVINGS"; // java read left to right, but variable is assigned after
+		// the condition is checked. 
 		
-		System.out.println("Enter a name for the bank account");
+		System.out.println("Enter a name for the bank account:");
 		
 		String bAccName = InputUtil.getNextString();
 	
@@ -57,7 +58,9 @@ UserProfileView(UserAccount useracc){
 					" VALUES(?, ?) returning *";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(bAccName, x);
+			ps.setString(1,bAccName);
+			ps.setString(2, typeOfAcc);
+			
 			ResultSet rs = ps.executeQuery();
 			
 			int newBankId = 0;

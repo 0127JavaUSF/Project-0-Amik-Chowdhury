@@ -13,8 +13,7 @@ public class InputUtil {
 		int selected = 0;
 		outer: do {
 			System.out.println("\nInstructions:\nSelect an option from " + min + 
-					" to " + max + "!\n" + "-------------------------------------------------\n"+ 
-					"-------------------------------------------------");
+					" to " + max + "!\n" + "\n--------------------------------\n");
 			while(!scan.hasNextInt()) { // keep asking user for input, if scanner detects nothing.
 				scan.nextLine();
 				continue outer;

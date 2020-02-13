@@ -5,7 +5,7 @@ import com.revature.project0.models.UserAccount;
 import com.revature.project0.util.InputUtil;
 
 public class LoginViwer implements Viewer {
-UserAccountDao userAccDao =  new UserAccountDao();
+UserAccountDao userAccDao =  new UserAccountDao(); // new object for user account. 
 UserAccount usrAcc = null;
 	@Override
 	public void openMenu() {
@@ -31,12 +31,12 @@ UserAccount usrAcc = null;
 	}
 
 	@Override
-	public Viewer pickOption() {
+	public Viewer pickOption() { // confirmation to see if user really wants to login.
 		// TODO Auto-generated method stub
 		int selected = InputUtil.getIntBetween(0, 1);
 		switch(selected) {
 		case 1: 
-			loginUser();
+			loginUser(); // runs through this method and returns info.
 			if(usrAcc == null){
 				return new MainMenu();
 			}
@@ -52,14 +52,14 @@ UserAccount usrAcc = null;
 	}
 
 
-	private void loginUser() {
+	private void loginUser() { // allows user to login.
 		// TODO Auto-generated method stub
 		System.out.println("Enter username: ");
-		String userName = InputUtil.getNextString();
+		String userName = InputUtil.getNextString(); // store input into variable
 		System.out.println("Enter password: ");
-		String userPassword = InputUtil.getNextString();
+		String userPassword = InputUtil.getNextString(); // store input into variable
 		
-		this.usrAcc = userAccDao.getAcc(userName, userPassword);
+		this.usrAcc = userAccDao.getAcc(userName, userPassword); //utilizes the dao with the user account. 
 			
 		
 		
